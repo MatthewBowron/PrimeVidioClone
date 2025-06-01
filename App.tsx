@@ -1,10 +1,17 @@
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import PrimeHeader  from './components/primerHeader';
 
 import NavigationIcon from './components/navigation_icon';
 
 export default function App() {
   return (
+    
     <View style={styles.container}>
+        <View>
+            <PrimeHeader />
+          </View>
+      
+      
       <View style={styles.content}>
         
       </View>
