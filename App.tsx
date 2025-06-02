@@ -1,6 +1,4 @@
-import { StyleSheet, View, Dimensions } from 'react-native';
-import { ScrollView, Text, Image } from 'react-native';
-
+import { StyleSheet, Text, View, Dimensions, ScrollView, Image } from 'react-native';
 import PrimeHeader  from './components/primerHeader';
 
 import NavigationIcon from './components/navigation_icon';
@@ -15,7 +13,6 @@ export default function App() {
       
       
       <View style={styles.content}>
-       <View style={styles.pageContent}>
   <Image
     source={require('./assets/banner.jpeg')}
     style={styles.banner}
@@ -34,10 +31,7 @@ export default function App() {
     <Image source={require('./assets/m4.jpeg')} style={styles.card} />
     <Image source={require('./assets/m5.jpeg')} style={styles.card} />
     <Image source={require('./assets/m6.jpeg')} style={styles.card} />
-  </View>
 </View>
-
-
         
       </View>
 
@@ -62,9 +56,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  content: {
-    flex: 1,
-  },
   footer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -80,8 +71,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
   },
-
-   pageContent: {
+  content: {
     flex: 1,
     width: '100%',
     alignItems: 'flex-start',
