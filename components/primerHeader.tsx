@@ -4,6 +4,9 @@ import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 const PrimeHeader: React.FC = () => {
   const menuItems: string[] = ['Movies', 'TV shows', 'Sports', 'Live TV'];
+  const handlePress = () => {
+    alert("Assignment 1 Done!");
+  }
 
   return (
     <View style={styles.container}>
@@ -22,7 +25,7 @@ const PrimeHeader: React.FC = () => {
       {/* Menu Row */}
       <View style={styles.menuRow}>
         {menuItems.map((item) => (
-          <TouchableOpacity key={item} style={styles.menuButton}>
+          <TouchableOpacity key={item} style={styles.menuButton} onPress={handlePress}>
             <Text style={styles.menuText}>{item}</Text>
           </TouchableOpacity>
         ))}

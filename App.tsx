@@ -5,34 +5,26 @@ import NavigationIcon from './components/navigation_icon';
 
 export default function App() {
   return (
-    
     <View style={styles.container}>
-        <View>
-            <PrimeHeader />
-          </View>
-      
+      <View>
+        <PrimeHeader />
+      </View>
       
       <View style={styles.content}>
-  <Image
-    source={require('./assets/banner.jpeg')}
-    style={styles.banner}
-    resizeMode="cover"
-  />
+        <Image source={require('./assets/banner.jpeg')} style={styles.banner}/>
 
-  <Text style={styles.sectionTitle}>Recommended Movies</Text>
-  <View style={styles.movieRow}>
-    <Image source={require('./assets/m1.jpeg')} style={styles.card} />
-    <Image source={require('./assets/m2.jpg')} style={styles.card} />
-    <Image source={require('./assets/m3.jpeg')} style={styles.card} />
-  </View>
+        <Text style={styles.text}>Recommended Movies</Text>
+        <View style={styles.movieRow}>
+          <Image source={require('./assets/m1.jpeg')} style={styles.longBanner} />
+          <Image source={require('./assets/m2.jpg')} style={styles.longBanner} />
+        </View>
 
-  <Text style={styles.sectionTitle}>Featured Originals and Exclusives</Text>
-  <View style={styles.movieRow}>
-    <Image source={require('./assets/m4.jpeg')} style={styles.card} />
-    <Image source={require('./assets/m5.jpeg')} style={styles.card} />
-    <Image source={require('./assets/m6.jpeg')} style={styles.card} />
-</View>
-        
+        <Text style={styles.text}>Featured Originals and Exclusives</Text>
+        <View style={styles.movieRow}>
+          <Image source={require('./assets/m3.jpeg')} style={styles.tallBanner} />
+          <Image source={require('./assets/m4.jpeg')} style={styles.tallBanner} />
+          <Image source={require('./assets/m5.jpeg')} style={styles.tallBanner} />
+        </View>
       </View>
 
       <View style={styles.footer}>
@@ -69,11 +61,15 @@ const styles = StyleSheet.create({
     borderTopColor: '#444',
   },
   text: {
-    color: '#fff',
+    color: '#777',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginBottom: 6,
   },
   content: {
     flex: 1,
-    width: '100%',
+    width: screenWidth,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     paddingHorizontal: 10,
@@ -81,31 +77,37 @@ const styles = StyleSheet.create({
   },
 
   banner: {
-    width: '100%',
-    height: 160,
+    width: screenWidth,
+    height: 0.3*screenHeight,
     borderRadius: 10,
     marginBottom: 10,
+    resizeMode: 'stretch',
   },
 
-  sectionTitle: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 6,
+  divider: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   movieRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 10,
-    width: '100%',
   },
 
-  card: {
-    width: 100,
-    height: 150,
+  longBanner: {
+    width: 0.6*screenWidth,
+    height: 0.15*screenHeight,
+    marginRight: 10,
     borderRadius: 8,
+    resizeMode: 'cover',
   },
 
+  tallBanner: {
+    width: 0.35*screenWidth,
+    height: 0.3*screenHeight,
+    marginRight: "5%",
+    borderRadius: 8,
+    resizeMode: 'cover',
+  },
 });
